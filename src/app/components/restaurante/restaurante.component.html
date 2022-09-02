@@ -1,0 +1,17 @@
+<ion-accordion-group >
+  <ion-accordion *ngFor="let productosCategoria of listaProductosPorCategoria" value="{{productosCategoria.titulo}}" >
+    <ion-item slot="header" color="light">
+      <ion-label>{{productosCategoria.titulo}}</ion-label>
+    </ion-item >
+    <div class="ion-padding" slot="content">
+      <ion-item *ngFor="let producto of productosCategoria.productos">
+        <ion-label>
+          {{producto.nombre}} <br> 
+          <div style="text-align: right;">
+            <b>{{producto.precio | currency}}</b>
+          </div>
+        </ion-label>
+      </ion-item>
+    </div>
+  </ion-accordion>
+</ion-accordion-group>
